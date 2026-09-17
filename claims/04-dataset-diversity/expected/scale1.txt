@@ -1,0 +1,6 @@
+Observed at scale 1 on the reference machine described in
+infrastructure/README.txt (CloudLab r7525).
+
+mimic_iv                                       13.7832 s
+nuclear_medicine                               9.0127 s
+hcup_nis                                       11.1419 s

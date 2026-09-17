@@ -1,0 +1,13 @@
+[
+  {
+    "name": "TumorPosition",
+    "type": "DistancePrecise",
+    "xMinValue": 0,
+    "xMaxValue": 4,
+    "yMinValue": 0,
+    "yMaxValue": 4,
+    "zMinValue": 0,
+    "zMaxValue": 4,
+    "decimalPrecision": 1
+  }
+]

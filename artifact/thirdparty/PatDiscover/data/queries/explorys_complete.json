@@ -1,0 +1,97 @@
+[
+    {
+        "type": "CombineGroup",
+        "attributeType": "EnumPrecise",
+        "operator": "And",
+        "children": [
+            {
+                "type": "CombineGroup",
+                "operator": "And",
+                "children": [
+                    {
+                        "type": "Attribute",
+                        "attribute": "Gender",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "BirthYear",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "BodyWeight",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "BodyHeight",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "WaistCircumference",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "CorposcularVolume",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "PlateletCount",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "AlanineAminotransferase",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "AlkalinePhosphatase",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "AspartateAminotransferase",
+                        "invertResult": true,
+                        "value": 0
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "Glucose",
+                        "invertResult": true,
+                        "value": 0
+                    }
+                ]
+            },
+            {
+                "type": "CombineGroup",
+                "operator": "Or",
+                "children": [
+                    {
+                        "type": "Attribute",
+                        "attribute": "Icd9Category",
+                        "value": 967
+                    },
+                    {
+                        "type": "Attribute",
+                        "attribute": "Icd10Category",
+                        "value": 794
+                    }
+                ]
+            }
+        ]
+    }
+]

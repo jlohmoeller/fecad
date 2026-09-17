@@ -1,0 +1,6 @@
+Observed at scale 2 on the reference machine described in
+infrastructure/README.txt (CloudLab r7525).
+
+1 providers                                    38.7117 s
+10 providers                                   49.2916 s
+25 providers                                   62.0704 s

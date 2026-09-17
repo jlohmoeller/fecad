@@ -1,0 +1,28 @@
+{
+  "name": "nuclear_medicine",
+  "description": "PatDiscover brain-tumor cohort (Pennekamp et al. 2025).",
+  "columns": [
+    {"index":  0, "name": "whoGrade",               "type": "uint", "bits": 3, "range": [1, 4]},
+    {"index":  1, "name": "tumorType",               "type": "uint", "bits": 2, "range": [0, 3],
+     "encoding": {"0": "Glioblastoma", "1": "Oligodendroglioma", "2": "Astrocytoma", "3": "BrainMetastasis"}},
+    {"index":  2, "name": "mgmtPromoterMethylation", "type": "bool", "bits": 1},
+    {"index":  3, "name": "codeletion1q19q",          "type": "bool", "bits": 1},
+    {"index":  4, "name": "idhWildType",              "type": "bool", "bits": 1},
+    {"index":  5, "name": "tumorPos_x",               "type": "uint", "bits": 6, "range": [0, 40], "scale": 10,
+     "note": "x-coordinate in meters, quantized to 0.1 m units stored as 0..40"},
+    {"index":  6, "name": "tumorPos_y",               "type": "uint", "bits": 6, "range": [0, 40], "scale": 10},
+    {"index":  7, "name": "tumorPos_z",               "type": "uint", "bits": 6, "range": [0, 40], "scale": 10},
+    {"index":  8, "name": "biopsy",                   "type": "uint", "bits": 2, "range": [0, 2],
+     "encoding": {"0": "No", "1": "Yes", "2": "Unknown"}},
+    {"index":  9, "name": "fetPet",                   "type": "uint", "bits": 2, "range": [0, 2]},
+    {"index": 10, "name": "resection",                "type": "uint", "bits": 2, "range": [0, 2]},
+    {"index": 11, "name": "ceTegProtocol",            "type": "uint", "bits": 2, "range": [0, 2]},
+    {"index": 12, "name": "radioTherapy",             "type": "uint", "bits": 2, "range": [0, 2]},
+    {"index": 13, "name": "chemoTherapy",             "type": "uint", "bits": 2, "range": [0, 2]},
+    {"index": 14, "name": "boostTherapy",             "type": "uint", "bits": 2, "range": [0, 2]},
+    {"index": 15, "name": "tmzTherapy",               "type": "uint", "bits": 2, "range": [0, 2]},
+    {"index": 16, "name": "activeTumorTissue",        "type": "bool", "bits": 1},
+    {"index": 17, "name": "tumorProgression",         "type": "bool", "bits": 1},
+    {"index": 18, "name": "age",                      "type": "uint", "bits": 7, "range": [0, 120]}
+  ]
+}

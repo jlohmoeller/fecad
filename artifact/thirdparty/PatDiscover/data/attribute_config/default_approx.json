@@ -1,0 +1,100 @@
+[
+  {
+    "name": "WhoGrade",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 5
+  },
+  {
+    "name": "TumorType",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 5
+  },
+  {
+    "name": "MgmtPromoterMethylation",
+    "type": "Boolean"
+  },
+  {
+    "name": "Codeletion1q19q",
+    "type": "Boolean"
+  },
+  {
+    "name": "IdhWildType",
+    "type": "Boolean"
+  },
+  {
+    "name": "TumorPosition",
+    "type": "DistanceApprox",
+    "xMinValue": 0,
+    "xMaxValue": 4,
+    "yMinValue": 0,
+    "yMaxValue": 4,
+    "zMinValue": 0,
+    "zMaxValue": 4,
+    "decimalPrecision": 1
+  },
+  {
+    "name": "Biopsy",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "FetPet",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "Resection",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "CeTegProtocol",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "RadioTherapy",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "ChemoTherapy",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "BoostTherapy",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "TmzTherapy",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 2
+  },
+  {
+    "name": "ActiveTumorTissue",
+    "type": "Boolean"
+  },
+  {
+    "name": "TumorProgression",
+    "type": "Boolean"
+  },
+  {
+    "name": "Age",
+    "type": "ContinuousApprox",
+    "minValue": 0,
+    "maxValue": 120,
+    "decimalPrecision": 0
+  }
+]

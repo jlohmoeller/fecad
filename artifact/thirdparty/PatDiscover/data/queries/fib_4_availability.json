@@ -1,0 +1,45 @@
+[
+     {
+        "type": "CombineGroup",
+        "attributeType": "EnumPrecise",
+        "operator": "And",
+        "children": [
+            {
+                "type": "Attribute",
+                "attribute": "BirthYear",
+                "invertResult": true,
+                "value": 0
+            },
+            {
+                "type": "Attribute",
+                "attribute": "PlateletCount",
+                "invertResult": true,
+                "value": 0
+            },
+            {
+                "type": "Attribute",
+                "attribute": "AspartateAminotransferase",
+                "invertResult": true,
+                "value": 0
+            },
+            {
+                "type": "Attribute",
+                "attribute": "AlanineAminotransferase",
+                "invertResult": true,
+                "value": 0
+            }
+        ]
+    },
+    {
+        "type": "CombineGroup",
+        "attributeType": "Boolean",
+        "operator": "Sum",
+        "children": [
+            {
+                "type": "Attribute",
+                "attribute": "PrimaryData",
+                "value": 1
+            }
+        ]
+    }
+]

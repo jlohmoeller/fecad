@@ -1,0 +1,14 @@
+.idea/
+__pycache__/
+.vscode/
+build/
+bin/
+cpp/build
+cpp/lib
+results/
+CMakeFiles/
+fecad
+logs
+results/
+data/
+aggregated/

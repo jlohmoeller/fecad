@@ -1,0 +1,6 @@
+Full-scale medians from the paper's runs.
+
+query completion time, Lattigo BGV, one provider, 10000 records
+  mimic_iv               43.4 s
+  nuclear_medicine       37.2 s
+  hcup_nis               41.3 s

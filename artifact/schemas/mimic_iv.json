@@ -1,0 +1,29 @@
+{
+  "name": "mimic_iv",
+  "description": "MIMIC-IV PhysioNet cohort. Sepsis + acute kidney injury discovery use case. Sources: hosp/patients, hosp/diagnoses_icd, hosp/labevents.",
+  "columns": [
+    {"index": 0, "name": "age",           "type": "uint", "bits": 7,  "range": [0, 120],
+     "source": "hosp/patients.anchor_age"},
+    {"index": 1, "name": "sex",           "type": "bool", "bits": 1,
+     "encoding": {"0": "M", "1": "F"},
+     "source": "hosp/patients.gender"},
+    {"index": 2, "name": "icd_sepsis",    "type": "bool", "bits": 1,
+     "source": "hosp/diagnoses_icd", "icd_prefix": ["A41", "038"],
+     "note": "ICD-10 A41.x or ICD-9 038.x"},
+    {"index": 3, "name": "icd_aki",       "type": "bool", "bits": 1,
+     "source": "hosp/diagnoses_icd", "icd_prefix": ["N17"],
+     "note": "ICD-10 N17.x — acute kidney injury"},
+    {"index": 4, "name": "icd_pneumonia", "type": "bool", "bits": 1,
+     "source": "hosp/diagnoses_icd", "icd_prefix": ["J18"],
+     "note": "ICD-10 J18.x — pneumonia"},
+    {"index": 5, "name": "icd_heart_fail","type": "bool", "bits": 1,
+     "source": "hosp/diagnoses_icd", "icd_prefix": ["I50"],
+     "note": "ICD-10 I50.x — heart failure"},
+    {"index": 6, "name": "creatinine_q",  "type": "uint", "bits": 8, "range": [0, 255], "scale": 10,
+     "source": "hosp/labevents", "itemid": 50912,
+     "note": "Creatinine (mg/dL) x10, capped at 25.5. LOINC 2160-0. Last ICU stay value. Missing -> 0. The 8-bit domain keeps the indicator polynomial inside the noise budget (see TestBackend_WideDomainGE)."},
+    {"index": 7, "name": "lactate_q",     "type": "uint", "bits": 8,  "range": [0, 200],  "scale": 10,
+     "source": "hosp/labevents", "itemid": 50813,
+     "note": "Lactate (mmol/L) x10. Last ICU stay value. Missing -> 0."}
+  ]
+}

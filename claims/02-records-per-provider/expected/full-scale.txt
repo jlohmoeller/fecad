@@ -1,0 +1,8 @@
+Full-scale medians from the paper's runs.
+
+query completion time, Lattigo BGV, one provider
+     1000 records      5.3 s
+    10000 records     32.1 s
+    30000 records     93.1 s
+    50000 records    155.0 s
+  (the paper continues to 1000000 records)

@@ -1,0 +1,35 @@
+Claim
+-----
+The same protocol runs unchanged across the three cohorts. The per-cohort spread
+in query completion time tracks the widest attribute domain, which sets the
+degree of the Lagrange indicator polynomial.
+
+Paper location
+--------------
+Section "Scalability", paragraph "Dataset Diversity", and Appendix "Dataset
+Characteristics and Queries".
+
+Procedure
+---------
+Runs each cohort's own reference predicate on synthetic records drawn from that
+cohort's schema, and prints the query completion time.
+
+Scale
+-----
+  1  1000 records per cohort                            (~2 min)
+  2  10000 records per cohort                           (~12 min)
+
+Data
+----
+Records are generated from the schemas in artifact/schemas/, which fix each
+column's width, domain and encoding. The real cohorts (MIMIC-IV, HCUP NIS) require 
+data use agreements and are not redistributable; artifact/preprocess/ holds the 
+scripts that convert them, and a reviewer holding the agreements can feed the 
+result in with --data-file. Supplied rows receive a consent decision drawn at
+--consent-fraction, as generated rows do.
+
+Assessment
+----------
+All three cohorts should complete, with times of the same order.
+expected/full-scale.txt lists the paper's medians, and expected/scale1.txt and
+expected/scale2.txt the results of the two levels on our reference machine.

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Age",
+    "type": "ContinuousPrecise",
+    "minValue": 0,
+    "maxValue": 120,
+    "decimalPrecision": 0
+  }
+]

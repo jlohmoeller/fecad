@@ -1,0 +1,9 @@
+Full-scale medians from the paper's runs.
+
+query completion time, Lattigo BGV, 10000 records split across providers
+    1 providers     43.8 s
+   10 providers     96.4 s
+   25 providers    218.9 s
+   50 providers    346.4 s
+   75 providers    570.8 s
+  100 providers    824.7 s

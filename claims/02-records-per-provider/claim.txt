@@ -1,0 +1,31 @@
+Claim
+-----
+Query completion time grows with the number of records per provider, and the
+growth is driven by the per-patient consent layer rather than by homomorphic
+evaluation: one BGV ciphertext absorbs many records, but every enrolled patient
+contributes a cancellation ciphertext that the proxy must add per query.
+
+Paper location
+--------------
+Section "Scalability", paragraph "Records per Provider".
+
+Procedure
+---------
+Runs the reference query at one provider for several record counts on the
+Lattigo BGV backend, with every patient consenting, and prints the query
+completion time for each.
+
+Scale
+-----
+  1  1000 and 5000 records                              (~3 min)
+  2  1000, 10000 and 30000 records                      (~15 min)
+The paper spans 1000 to 1000000 records; the two largest points cap the
+consenting cohort at 250000 patients because one cancellation ciphertext per
+patient (about 1 MiB) exceeds node-local scratch beyond that.
+
+Assessment
+----------
+Completion time should rise monotonically and super-linearly in the record
+count. expected/full-scale.txt lists the paper's medians, and
+expected/scale1.txt and expected/scale2.txt the results of the two levels on our
+reference machine.

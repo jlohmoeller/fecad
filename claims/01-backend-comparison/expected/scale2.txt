@@ -1,0 +1,8 @@
+Observed at scale 2 on the cloudlab reference machine described in
+infrastructure/README.txt, one run per data point.
+
+null                                           19.1217 s
+lattigo                                        30.7688 s
+he3db                                         527.4139 s
+patdiscover                                  4706.2018 s
+engorgio                                    11576.7614 s

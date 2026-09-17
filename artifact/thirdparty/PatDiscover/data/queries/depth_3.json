@@ -1,0 +1,65 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "EnumPrecise",
+    "operator": "And",
+    "children": [
+      {
+        "type": "CombineGroup",
+        "operator": "And",
+        "children": [
+          {
+            "type": "CombineGroup",
+            "operator": "And",
+            "children": [
+              {
+                "type": "Attribute",
+                "attribute": "TumorType",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "type": "CombineGroup",
+            "operator": "And",
+            "children": [
+              {
+                "type": "Attribute",
+                "attribute": "WhoGrade",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "CombineGroup",
+        "operator": "And",
+        "children": [
+          {
+            "type": "CombineGroup",
+            "operator": "And",
+            "children": [
+              {
+                "type": "Attribute",
+                "attribute": "MgmtPromoterMethylation",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "type": "CombineGroup",
+            "operator": "And",
+            "children": [
+              {
+                "type": "Attribute",
+                "attribute": "Codeletion1q19q",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

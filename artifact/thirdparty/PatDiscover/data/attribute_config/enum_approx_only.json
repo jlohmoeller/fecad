@@ -1,0 +1,8 @@
+[
+  {
+    "name": "TumorType",
+    "type": "EnumApprox",
+    "minValue": 0,
+    "maxValue": 5
+  }
+]

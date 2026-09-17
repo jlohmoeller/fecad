@@ -1,0 +1,19 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "EnumPrecise",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "WhoGrade",
+        "value": 1
+      },
+      {
+        "type": "Attribute",
+        "attribute": "TumorType",
+        "value": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Gender",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "BirthYear",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "BodyWeight",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "BodyHeight",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "WaistCircumference",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "CorposcularVolume",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "PlateletCount",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "AlanineAminotransferase",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "AlkalinePhosphatase",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "AspartateAminotransferase",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "Glucose",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "Icd9Category",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "Icd9Subcategory",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "Icd10Category",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "Icd10Subcategory",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "PrimaryData",
+        "type": "Boolean"
+    }
+]

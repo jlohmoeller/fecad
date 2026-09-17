@@ -1,0 +1,62 @@
+[
+  {
+    "name": "WhoGrade",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 5
+  },
+  {
+    "name": "TumorType",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 5
+  },
+  {
+    "name": "MgmtPromoterMethylation",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  },
+  {
+    "name": "Codeletion1q19q",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  },
+  {
+    "name": "IdhWildType",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  },
+  {
+    "name": "Biopsy",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  },
+  {
+    "name": "FetPet",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  },
+  {
+    "name": "Resection",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  },
+  {
+    "name": "ActiveTumorTissue",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  },
+  {
+    "name": "TumorProgression",
+    "type": "EnumPrecise",
+    "minValue": 0,
+    "maxValue": 3
+  }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "name": "BirthYear",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "PlateletCount",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "AspartateAminotransferase",
+        "type": "EnumPrecise"
+    },
+    {
+        "name": "AlanineAminotransferase",
+        "type": "EnumPrecise"
+    }
+]

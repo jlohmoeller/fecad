@@ -1,0 +1,17 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "DistanceApprox",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "TumorPosition",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "upperBound": 3.5
+      }
+    ]
+  }
+]

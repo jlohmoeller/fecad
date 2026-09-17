@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+import "data_transfer_objects.proto";
+import "google/protobuf/empty.proto";
+
+package pat_disc.proto;
+
+message ChunkedBytePayload {
+  bytes payload = 1;
+}
+
+message TaRequest {
+  AttributeType type = 1;
+}
+
+message KeySwitchingKeyRequest {
+  AttributeType type = 1;
+  bytes public_key = 2;
+}
+
+message QueryRequest {
+  QueryData data = 1;
+  KeySwitchingKeys keys = 2;
+}
+
+message QueryResponse {
+  oneof data {
+    QueryResult result = 1;
+    PatientToCiphertexts patient_info = 2;
+  }
+}
+
+enum KeyType {BS_KEY = 0; KS_KEY = 1;}
+
+message BootstrappingKeyChunked {
+  uint32 index = 1;
+  KeyType type = 2;
+  bytes data = 3;
+}
+
+service TrustedAuthority {
+  rpc GetCryptoContext(TaRequest) returns (stream ChunkedBytePayload);
+  rpc GetPublicKey(TaRequest) returns (stream ChunkedBytePayload);
+  rpc GetMultKey(TaRequest) returns (stream ChunkedBytePayload);
+
+  rpc GetKeySwitchingKey(stream ChunkedBytePayload) returns (stream ChunkedBytePayload);
+
+  rpc GetSchemeSwitchingKey(TaRequest) returns (stream ChunkedBytePayload);
+  rpc GetAutomorphismKey(TaRequest) returns (stream ChunkedBytePayload);
+  rpc GetBinFheCryptoContext(TaRequest) returns (stream ChunkedBytePayload);
+  rpc GetBinFheRefreshKey(TaRequest) returns (stream ChunkedBytePayload);
+  rpc GetBinFheSwitchKey(TaRequest) returns (stream ChunkedBytePayload);
+  rpc GetBinFheBootstrappingKey(TaRequest) returns (stream BootstrappingKeyChunked);
+
+#if PD_EVAL
+  // For testing only
+  rpc Kill(google.protobuf.Empty) returns (stream google.protobuf.Empty);
+#endif
+
+#if PD_DEBUG
+  rpc GetPrivateKey(TaRequest) returns (stream ChunkedBytePayload);
+#endif
+}
+
+service PatientDataServer {
+  rpc UploadPatientData(stream PatientDataUpload) returns (google.protobuf.Empty);
+
+  // Should be QueryRequest / QueryResponse, again size limit
+  rpc ProcessQuery(stream ChunkedBytePayload) returns (stream QueryResponse);
+
+#if PD_EVAL
+  // For testing only
+  rpc Kill(google.protobuf.Empty) returns (stream google.protobuf.Empty);
+#endif
+}

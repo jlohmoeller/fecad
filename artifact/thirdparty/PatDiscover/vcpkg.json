@@ -1,0 +1,30 @@
+{
+  "name": "pat-discover",
+  "version-string": "1.0.0",
+  "dependencies": [
+    {
+      "name": "nlohmann-json"
+    },
+    {
+      "name": "spdlog"
+    },
+    {
+      "name": "sqlite3"
+    },
+    {
+      "name": "protobuf"
+    },
+    {
+      "name": "gtest"
+    },
+    {
+      "name": "boost-program-options"
+    },
+    {
+      "name": "grpc"
+    },
+    {
+      "name": "openssl"
+    }
+  ]
+}

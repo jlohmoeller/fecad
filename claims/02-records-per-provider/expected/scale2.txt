@@ -1,0 +1,6 @@
+Observed at scale 2 on the reference machine described in
+infrastructure/README.txt (CloudLab r7525).
+
+1000 records                                   5.0488 s
+10000 records                                  30.2808 s
+30000 records                                  87.2285 s

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "Boolean",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "MgmtPromoterMethylation",
+        "value": 1
+      }
+    ]
+  }
+]

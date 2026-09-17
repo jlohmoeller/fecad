@@ -1,0 +1,27 @@
+Claim
+-----
+Holding the federation-wide record count fixed, query completion time grows with
+the number of data providers.
+
+Paper location
+--------------
+Section "Scalability", paragraph "Number of Providers", and Figure 4.
+
+Procedure
+---------
+Splits a fixed record count across an increasing number of providers on the
+Lattigo BGV backend and prints the query completion time for each federation
+size. The proxy returns one aggregated result ciphertext, not one per provider.
+
+Scale
+-----
+  1  1000 records over 1, 5, 10 providers               (~4 min)
+  2  10000 records over 1, 10, 25 providers             (~16 min)
+The paper goes to 100 providers.
+
+Assessment
+----------
+Completion time should rise with the provider count while the record total holds
+constant. expected/full-scale.txt lists the paper's medians up to 100 providers,
+expected/scale1.txt and expected/scale2.txt the results of the two levels on our
+reference machine; the slope depends on the machine's core count.

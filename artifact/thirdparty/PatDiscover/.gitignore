@@ -1,0 +1,26 @@
+# Build directories
+cmake-build-debug/
+cmake-build-release/
+
+# Database file
+db/
+
+# Timing data
+timingData/
+
+# IDE
+.idea/
+
+logs/
+ta-storage/
+test-results/
+openfhe_lib/
+python_logs/
+graphs/
+
+data.json
+**/__pycache__/
+
+.venv/
+**/.antlr
+**/.DS_Store

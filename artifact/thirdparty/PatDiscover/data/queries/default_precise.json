@@ -1,0 +1,81 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "Boolean",
+    "operator": "And",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "IdhWildType",
+        "value": 0
+      },
+      {
+        "type": "Attribute",
+        "attribute": "MgmtPromoterMethylation",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "type": "CombineGroup",
+    "attributeType": "EnumPrecise",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "CombineGroup",
+        "operator": "Or",
+        "children": [
+          {
+            "type": "Attribute",
+            "attribute": "TumorType",
+            "value": 0
+          },
+          {
+            "type": "Attribute",
+            "attribute": "TumorType",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "type": "CombineGroup",
+        "operator": "And",
+        "children": [
+          {
+            "type": "Attribute",
+            "attribute": "ChemoTherapy",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "CombineGroup",
+    "attributeType": "ContinuousPrecise",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "Age",
+        "lowerBound": 20,
+        "upperBound": 40
+      }
+    ]
+  },
+  {
+    "type": "CombineGroup",
+    "attributeType": "DistancePrecise",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "TumorPosition",
+        "x": 1.5,
+        "y": 0.8,
+        "z": 2.3,
+        "upperBound": 1.0
+      }
+    ]
+  }
+]

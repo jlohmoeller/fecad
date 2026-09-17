@@ -1,0 +1,19 @@
+[
+    {
+        "type": "CombineGroup",
+        "attributeType": "EnumPrecise",
+        "operator": "Or",
+        "children": [
+            {
+                "type": "Attribute",
+                "attribute": "Icd9Category",
+                "value": 967
+            },
+            {
+                "type": "Attribute",
+                "attribute": "Icd10Category",
+                "value": 794
+            }
+        ]
+    }
+]

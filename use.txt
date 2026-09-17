@@ -1,0 +1,52 @@
+Intended use and limitations
+===========================
+
+Intended use
+------------
+This artifact is the research prototype accompanying the paper, intended for
+reproducing our measurements and for studying how cryptographic per-query
+consent composes with FHE-backed encrypted databases; it is not a deployable
+clinical system.
+
+Scope
+-----
+The prototype runs the discovery protocol end to end across six entities: a
+user, a privacy proxy, a key manager, data holders, evaluators and patients.
+Each provider evaluates predicates homomorphically, every enrolled patient
+blinds its own rows, and only a fresh per-query patient signature lets the proxy
+cancel that blinding. We include five interchangeable backends, a plaintext
+baseline and four FHE engines.
+
+Limitations
+-----------
+By default the entities run as separate services on one host, so co-located
+providers contend for CPU.
+
+Quantized columns are capped at 8 bits. The indicator polynomial has degree
+equal to the column domain and coefficients bounded by the plaintext modulus,
+so under the shipped parameters an 8-bit domain is exact, a 9-bit domain passes
+some runs and not others, and 10 bits and above decrypt to noise.
+
+Per-patient consent costs one cancellation ciphertext of about 1 MiB at the
+Lattigo parameter set, so a cohort of a million patients demands roughly a
+terabyte of proxy-side storage; the paper therefore caps the consenting cohort
+at the two largest record counts.
+
+The approximate CKKS comparator in the PatDiscover backend resolves differences
+no finer than about 0.008 in its normalized band, admitting rows within roughly
+two quantization levels of a threshold on 8-bit columns, and reports around
+99 percent accuracy where the other backends are exact.
+
+HE3DB cannot hold the per-provider evaluation keys for large federations; the
+paper reports it up to 25 providers.
+
+
+Data
+----
+The artifact contains no patient data; README.txt describes
+record synthesis and the requirements for substituting real cohorts.
+
+Security
+--------
+The prototype is not hardened:  Do not point it
+at real patient data outside a controlled environment.

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "EnumPrecise",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "TumorType",
+        "value": 1
+      }
+    ]
+  }
+]

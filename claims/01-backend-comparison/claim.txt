@@ -1,0 +1,31 @@
+Claim
+-----
+The plaintext baseline and the four FHE backends differ by orders of magnitude
+in query completion time for the same consent-gated query. The ordering is
+  null < Lattigo BGV < HE3DB < PatDiscover < Engorgio.
+
+Paper location
+--------------
+Section "Performance", paragraph "Backend Comparison", and Figure 3.
+
+Procedure
+---------
+Run the reference query at one data provider on each available backend and
+prints the query completion time. Every enrolled patient consents to the query,
+as in the paper.
+
+Scale
+-----
+  1  1000 records, backends null/Lattigo/HE3DB          (~2 min)
+  2  10000 records, all five backends                   (~5 h, Engorgio dominates)
+Level 1 leaves out PatDiscover and Engorgio on purpose. Both need about half an
+hour even at 1000 records, so the full ordering is only visible at level 2.
+The paper reports 10000 records and the mean of 30 runs; both levels here
+perform a single run.
+
+Assessment
+----------
+Compare the ordering. expected/full-scale.txt lists the
+paper's medians at 10000 records, expected/scale1.txt and expected/scale2.txt
+list the results of the two levels on our reference machine.
+Absolute values will differ from the paper, depending on the machine.

@@ -1,0 +1,10 @@
+artifact/bin/
+artifact/cpp/build/
+artifact/cpp/lib/
+artifact/aggregated/
+artifact/thirdparty/HE3DB/
+artifact/thirdparty/Engorgio/
+claims/*/output/
+artifact/preprocess/__pycache__/
+artifact/figures/
+artifact/variables.tex

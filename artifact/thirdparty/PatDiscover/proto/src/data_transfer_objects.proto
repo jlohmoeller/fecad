@@ -1,0 +1,155 @@
+syntax = "proto3";
+
+package pat_disc.proto;
+
+enum AttributeType {
+  BOOLEAN = 0;
+  ENUM_PRECISE = 1;
+  ENUM_APPROX = 2;
+  CONTINUOUS_PRECISE = 3;
+  CONTINUOUS_APPROX = 4;
+  DISTANCE_PRECISE = 5;
+  DISTANCE_APPROX = 6;
+}
+
+// Patient Data
+message IntegerPlaintext {
+  repeated int64 values = 1;
+}
+
+message Position {
+  oneof x {
+    IntegerPlaintext plain_x = 1;
+    bytes ciphertext_x = 2;
+  }
+  oneof y {
+    IntegerPlaintext plain_y = 3;
+    bytes ciphertext_y = 4;
+  }
+  oneof z {
+    IntegerPlaintext plain_z = 5;
+    bytes ciphertext_z = 6;
+  }
+}
+
+message IdentifierData {
+  string provider = 1;
+  repeated string ids = 2;
+}
+
+message AttributeData {
+  string attribute = 1;
+  bytes ciphertext = 2;
+}
+
+message PatientDataUpload {
+  oneof payload {
+    IdentifierData id_data = 1;
+    AttributeData attribute_data = 2;
+  }
+}
+
+// Queries
+enum CombineOperator {
+  AND = 0;
+  OR = 1;
+  SUM = 2;
+}
+
+message RangeQuery {
+  oneof lower_bound {
+    IntegerPlaintext plain_lower = 1;
+    bytes ciphertext_lower = 2;
+  }
+  oneof upper_bound {
+    IntegerPlaintext plain_upper = 3;
+    bytes ciphertext_upper = 4;
+  }
+}
+
+message PositionQuery {
+  oneof x {
+    IntegerPlaintext plain_x = 1;
+    bytes ciphertext_x = 2;
+  }
+  oneof y {
+    IntegerPlaintext plain_y = 3;
+    bytes ciphertext_y = 4;
+  }
+  oneof z {
+    IntegerPlaintext plain_z = 5;
+    bytes ciphertext_z = 6;
+  }
+  oneof upper_bound {
+    IntegerPlaintext plain_upper = 7;
+    bytes ciphertext_upper = 8;
+  }
+}
+
+message QueryAttributeData {
+  string attribute = 1;
+  oneof data {
+    IntegerPlaintext single_int_plain = 2;
+    bytes single_ciphertext = 3;
+    RangeQuery range = 4;
+    PositionQuery position = 5;
+  }
+  bool invert_result = 6;
+}
+
+message QueryAttributeDataList {
+  repeated QueryAttributeData list = 1;
+}
+
+message CombineGroupList {
+  repeated CombineGroup list = 1;
+}
+
+message CombineGroup {
+  CombineOperator op = 1;
+  oneof payload {
+    CombineGroupList groups = 2;
+    QueryAttributeDataList attribute_data_list = 3;
+  }
+}
+
+message QueryMapEntry {
+  AttributeType attribute_type = 1;
+  CombineGroup group = 2;
+}
+
+message QueryData {
+  repeated QueryMapEntry entries = 1;
+}
+
+message QueryResult {
+  AttributeType attribute_type = 1;
+  int64 ct_id = 2;
+  bytes result = 3;
+}
+
+message AttrTypeCtId {
+  AttributeType attribute_type = 1;
+  int64 ct_id = 2;
+  int64 ct_index = 3;
+}
+
+message PatientToCiphertexts {
+  string patient_id = 1;
+  string provider = 2;
+  repeated AttrTypeCtId ciphertext_ids = 3;
+}
+
+message PatientCiphertextRel {
+  repeated PatientToCiphertexts assignment = 1;
+}
+
+// Keys
+message SingleKey {
+  AttributeType attribute_type = 1;
+  bytes key = 2;
+}
+
+message KeySwitchingKeys {
+  repeated SingleKey keys = 1;
+}

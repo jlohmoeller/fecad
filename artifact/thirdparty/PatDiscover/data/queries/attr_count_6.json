@@ -1,0 +1,39 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "EnumPrecise",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "WhoGrade",
+        "value": 1
+      },
+      {
+        "type": "Attribute",
+        "attribute": "TumorType",
+        "value": 1
+      },
+      {
+        "type": "Attribute",
+        "attribute": "MgmtPromoterMethylation",
+        "value": 1
+      },
+      {
+        "type": "Attribute",
+        "attribute": "Codeletion1q19q",
+        "value": 1
+      },
+      {
+        "type": "Attribute",
+        "attribute": "IdhWildType",
+        "value": 1
+      },
+      {
+        "type": "Attribute",
+        "attribute": "Resection",
+        "value": 1
+      }
+    ]
+  }
+]

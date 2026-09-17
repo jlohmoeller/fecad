@@ -1,0 +1,15 @@
+[
+  {
+    "type": "CombineGroup",
+    "attributeType": "ContinuousApprox",
+    "operator": "Sum",
+    "children": [
+      {
+        "type": "Attribute",
+        "attribute": "Age",
+        "lowerBound": 30,
+        "upperBound": 40
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+Full-scale medians from the paper's runs (30 repetitions per data point,
+10000 records unless noted, one machine with two 24-core sockets).
+A single scaled-down run will differ.
+
+query completion time, one provider, 10000 records
+  null              24.1 s
+  lattigo           36.2 s
+  he3db            632.1 s
+  patdiscover     7205.9 s
+  engorgio       13235.0 s
